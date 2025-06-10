@@ -1,0 +1,12 @@
+/**
+ * Element Plus Variables
+ * This file contains custom variables for Element Plus components (dark theme).
+ * @see https://element-plus.org/en-US/guide/theming.html
+ * @see https://element-plus.org/en-US/guide/dark-mode.html
+ */
+
+@use "./_ep-variables" as ep-variables;
+
+@forward "element-plus/theme-chalk/src/dark/var.scss" with (
+  $colors: ep-variables.$company-colors
+);
