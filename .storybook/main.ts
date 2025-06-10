@@ -15,5 +15,22 @@ const config: StorybookConfig = {
       docgen: "vue-component-meta",
     },
   },
+  viteFinal: async (config) => {
+    const newConfig = {
+      ...config,
+      css: {
+        ...config.css,
+        preprocessorOptions: {
+          ...config.css?.preprocessorOptions,
+          scss: {
+            ...config.css?.preprocessorOptions?.scss,
+            api: "modern-compiler",
+            additionalData: `@use "../src/assets/styles/element-plus/index.scss" as *;`,
+          },
+        },
+      },
+    };
+    return config;
+  },
 };
 export default config;

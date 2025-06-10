@@ -1,13 +1,12 @@
 <template>
   <div>
-    <ElButton>Hello</ElButton>
+    <ElButton class="font-bold!">Hello</ElButton>
   </div>
 </template>
 
 <script lang="ts" setup>
   import { computed } from "vue";
 
-  import "./button.css";
   import { ElButton } from "element-plus";
 
   const props = withDefaults(

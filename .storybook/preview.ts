@@ -1,7 +1,33 @@
 import type { Preview } from "@storybook/vue3-vite";
 
+import "../src/assets/styles/tailwindcss.css";
+import "../src/assets/styles/styles.scss";
+
 const preview: Preview = {
+  initialGlobals: {
+    theme: "light",
+    backgrounds: { value: "light" },
+  },
+  globalTypes: {
+    theme: {
+      description: "Global theme for components",
+      toolbar: {
+        title: "Theme",
+        icon: "circlehollow",
+        items: ["light", "dark"],
+        dynamicTitle: true,
+      },
+    },
+  },
   parameters: {
+    backgrounds: {
+      options: {
+        // 👇 Default options
+        dark: { name: "Dark", value: "#000000" },
+        light: { name: "Light", value: "#ffffff" },
+        // 👇 Add your own
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -17,8 +43,10 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (story) => {
-      console.log("Rendering story with decorator");
+    (story, context) => {
+      const selectedTheme = context.globals.theme || "light";
+      document.documentElement.classList.remove("light", "dark");
+      document.documentElement.classList.add(selectedTheme);
       return story();
     },
   ],
