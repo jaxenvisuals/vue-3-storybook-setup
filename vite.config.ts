@@ -26,6 +26,22 @@ export default defineConfig(() => {
         },
       },
     },
+    build: {
+      lib: {
+        entry: "src/index.ts",
+        name: "BayorUI",
+        fileName: (format) => `bayor-ui.${format}.js`,
+      },
+      rollupOptions: {
+        external: ["vue", "element-plus"],
+        output: {
+          globals: {
+            vue: "Vue",
+            "element-plus": "ElementPlus",
+          },
+        },
+      },
+    },
   };
 
   return configurations;
