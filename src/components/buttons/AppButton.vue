@@ -5,13 +5,14 @@
 <script setup lang="ts">
   import type { T_ButtonLabel } from "../../types";
 
-  withDefaults(
-    defineProps<{
-      /**
-       * The label of the button
-       */
-      label?: T_ButtonLabel;
-    }>(),
-    { label: "Click Me!!" }
-  );
+  type AppButtonProps = {
+    /**
+     * The label of the button
+     */
+    label?: T_ButtonLabel;
+  };
+
+  withDefaults(defineProps<AppButtonProps>(), { label: "Click Me!!" });
+
+  export type { AppButtonProps };
 </script>
