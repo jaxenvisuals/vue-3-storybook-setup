@@ -14,6 +14,7 @@
     "build": "sh ./scripts/build.sh && sh ./scripts/migrate-dist.sh",
     "build-lib": "vite build && vue-tsc --project ./tsconfig.lib.json",
     "prebuild": "sh ./scripts/prebuild.sh",
+    "postbuild": "sh ./scripts/publish.sh",
     "changeset": "changeset",
     "version:dev": "changeset version",
     "preview": "vite preview",
