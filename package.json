@@ -5,10 +5,17 @@
   "type": "module",
   "main": "dist/bayor-ui.umd.js",
   "module": "dist/bayor-ui.es.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist"
   ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --project ./tsconfig.lib.json",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
@@ -20,14 +27,6 @@
     "element-plus": "^2.10.1",
     "tailwindcss": "^4.1.8",
     "vue": "^3.5.13"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "build-lib": "vite build && vue-tsc --project ./tsconfig.lib.json",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
@@ -55,5 +54,8 @@
     "vite-plugin-lib": "^3.0.1",
     "vitest": "^3.2.3",
     "vue-tsc": "^2.2.8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
