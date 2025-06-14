@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --project ./tsconfig.lib.json",
+    "build": "sh ./scripts/build.sh && sh ./scripts/migrate-dist.sh",
+    "build-lib": "vite build && vue-tsc --project ./tsconfig.lib.json",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -41,6 +42,7 @@
     "@storybook/addon-onboarding": "9.0.8",
     "@storybook/addon-vitest": "^9.0.8",
     "@storybook/vue3-vite": "9.0.8",
+    "@types/node": "^24.0.1",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vitest/browser": "^3.2.3",
     "@vitest/coverage-v8": "^3.2.3",
