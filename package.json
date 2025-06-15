@@ -1,6 +1,6 @@
 {
   "name": "@jackson-bayor/bayor-ui",
-  "private": true,
+  "private": false,
   "version": "0.2.3",
   "type": "module",
   "main": "dist/bayor-ui.umd.js",
