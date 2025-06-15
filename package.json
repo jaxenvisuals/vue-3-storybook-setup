@@ -9,7 +9,11 @@
   "files": [
     "dist"
   ],
-  "scripts": {},
+  "scripts": {
+    "update": "npm run pull && npm run push",
+    "pull": "sh ./pull.sh",
+    "push": "sh ./push.sh"
+  },
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
