@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import ElementPlus from "unplugin-element-plus/vite";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,6 +23,14 @@ export default defineConfig(() => {
         useSource: true,
       }),
       tailwindcss(),
+      viteStaticCopy({
+        targets: [
+          {
+            src: "src/assets/styles/element-plus",
+            dest: "element-plus-theming",
+          },
+        ],
+      }),
     ],
     css: {
       preprocessorOptions: {
