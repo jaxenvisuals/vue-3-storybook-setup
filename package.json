@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "sh ./scripts/build.sh && sh ./scripts/migrate-dist.sh",
+    "build": "npm run build-changes",
+    "build-changes": "sh ./scripts/build.sh && sh ./scripts/migrate-dist.sh",
     "build-lib": "vite build && vue-tsc --project ./tsconfig.lib.json",
     "prebuild": "sh ./scripts/prebuild.sh",
     "postbuild": "sh ./scripts/publish.sh",
