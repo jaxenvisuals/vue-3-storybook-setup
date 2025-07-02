@@ -1,6 +1,6 @@
 import type { Preview } from "@storybook/vue3-vite";
 
-import "../src/assets/styles/tailwindcss.css";
+import "../src/assets/styles/tailwind/index.css";
 import "../src/assets/styles/styles.scss";
 
 const preview: Preview = {
