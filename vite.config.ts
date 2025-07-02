@@ -1,6 +1,7 @@
 import { defineConfig, type UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
+import ElementPlus from "unplugin-element-plus/vite";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import { viteStaticCopy } from "vite-plugin-static-copy";
@@ -18,6 +19,9 @@ export default defineConfig(() => {
     },
     plugins: [
       vue(),
+      ElementPlus({
+        useSource: true,
+      }),
       tailwindcss(),
       viteStaticCopy({
         targets: [

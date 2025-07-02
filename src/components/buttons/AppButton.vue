@@ -12,11 +12,6 @@
   import { ElButton } from "element-plus";
   import type { T_ButtonLabel } from "../../types";
 
-  if (typeof window !== "undefined") {
-    // Runtime style import triggers only when component is used
-    // import("element-plus/es/components/button/style/index");
-  }
-
   type AppButtonProps = {
     /**
      * The label of the button
