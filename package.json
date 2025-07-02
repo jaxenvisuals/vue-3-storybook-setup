@@ -20,8 +20,8 @@
       "import": "./dist/bayor-ui.es.js",
       "require": "./dist/bayor-ui.umd.js"
     },
-    "./styles/element-plus": {
-      "sass": "./src/styles/element-plus/index.scss"
+    "./styles/*": {
+      "default": "./dist/src/styles/*"
     }
   },
   "peerDependencies": {
