@@ -26,8 +26,8 @@ export default defineConfig(() => {
       viteStaticCopy({
         targets: [
           {
-            src: "src/assets/styles/element-plus",
-            dest: "element-plus-theming",
+            src: "src/assets/styles",
+            dest: "src/styles",
           },
         ],
       }),
